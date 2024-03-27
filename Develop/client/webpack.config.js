@@ -18,13 +18,52 @@ module.exports = () => {
       path: path.resolve(__dirname, 'dist'),
     },
     plugins: [
-      
+      new HtmlWebpackPlugin[{
+        template: '/src/index.html',
+        filename: 'index.html',
+        chunks: ['main'],
+      }],
+      new HtmlWebpackPlugin[{
+        template: '/src/index.html',
+        filename: 'index.html',
+        chunks: ['install'],
+      }],
+      new WebpackPwaManifest({
+        filename: 'manifest.json',
+        name: 'name of project',
+        short_name: 'Short App Name here',
+        description: 'desc of the app',
+        background_color: '#ffffff',
+        theme_color: '#ffffff',
+        icons: [
+          {
+            src: path.resolve('src/images/logo.png'),
+            sizes: [96, 128, 192, 256, 384, 512],
+            destination: path.join('images', 'icons'),
+          },
+        ],
+      }),
+      new InjectManifest({
+        swSrc: './src/src-sw.js',
+        swDest: 'src-sw.js',
+      }),
     ],
 
     module: {
-      rules: [
-        
-      ],
-    },
-  };
+      rules: [{
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader'],
+      },
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+          },
+        },
+      },
+    ],
+  },
+};
 };
