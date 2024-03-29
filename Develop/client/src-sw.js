@@ -19,12 +19,9 @@ const pageCache = new CacheFirst({
   ],
 });
 
-warmStrategyCache({
-  urls: ['/index.html', '/'],
-  strategy: pageCache,
-});
-
-registerRoute(({ request }) => request.mode === 'navigate', pageCache);
-
-// TODO: Implement asset caching
-registerRoute();
+registerRoute(
+  // Match all requests for assets
+  ({ request }) => request.destination === 'style' || request.destination === 'script' || request.destination === 'image' || request.destination === 'font',
+  // Use the pageCache strategy for caching assets
+  pageCache
+);

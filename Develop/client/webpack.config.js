@@ -23,11 +23,6 @@ module.exports = () => {
         filename: 'index.html',
         chunks: ['main'],
       }],
-      new HtmlWebpackPlugin[{
-        template: '/src/index.html',
-        filename: 'index.html',
-        chunks: ['install'],
-      }],
       new WebpackPwaManifest({
         filename: 'manifest.json',
         name: 'Jate',
