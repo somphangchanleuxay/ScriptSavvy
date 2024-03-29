@@ -30,9 +30,9 @@ module.exports = () => {
       }],
       new WebpackPwaManifest({
         filename: 'manifest.json',
-        name: 'name of project',
-        short_name: 'Short App Name here',
-        description: 'desc of the app',
+        name: 'Jate',
+        short_name: 'Jate',
+        description: 'another text editor',
         background_color: '#ffffff',
         theme_color: '#ffffff',
         icons: [
