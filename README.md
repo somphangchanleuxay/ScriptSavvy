@@ -1,1 +1,1 @@
-# ScriptSavvy
+# Text Editor Starter Code

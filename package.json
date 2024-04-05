@@ -1,0 +1,27 @@
+{
+  "name": "JATE",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start:dev": "concurrently \"npm run server:dev\" \"cd client && npm run dev\"",
+    "start": "cd server && node server.js",
+    "server:dev": "cd server && nodemon server.js",
+    "build": "cd client && npm run build",
+    "build:dev": "cd client && npm run build:dev",
+    "install": "cd server && npm i && cd ../client && npm",
+    "client": "cd client && npm start'"
+  },
+  "keywords": [],
+  "author": "Somphang Chanleuxay",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "if-env": "^1.0.4"
+  },
+  "devDependencies": {
+    "concurrently": "^5.2.0",
+    "nodemon": "^2.0.4",
+    "webpack": "^5.91.0"
+  }
+}
