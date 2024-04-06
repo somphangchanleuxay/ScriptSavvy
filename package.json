@@ -9,7 +9,7 @@
     "server:dev": "cd server && nodemon server.js",
     "build": "cd client && npm run build",
     "build:dev": "cd client && npm run build:dev",
-    "install": "cd server && npm i && cd ../client && npm",
+    "install": "cd server && npm i && cd ../client && npm i",
     "client": "cd client && npm start'"
   },
   "keywords": [],
