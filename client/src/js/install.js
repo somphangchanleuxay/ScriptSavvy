@@ -6,7 +6,7 @@ window.addEventListener('beforeinstallprompt', (event) => {
     // Prevent the default behavior
     event.preventDefault();
     // Store the event for later use
-    deferredPrompt = event;
+    window.deferredPrompt = event;
     // Show the install button
     butInstall.style.display = 'block';
   });
